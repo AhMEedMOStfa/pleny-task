@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Angular Product Explorer is a frontend web application designed to help users explore various products efficiently. The application supports user authentication, product pagination, search, and filtering, as well as cart management. The tech stack used includes Angular 17, SCSS, and NgRx for state management.
+The Angular Product Explorer is a frontend web application designed to help users explore various products efficiently. The application supports user authentication, product pagination, search, and filtering, as well as cart management. The tech stack used includes Angular 18, SCSS, and NgRx for state management.
 
 ## Features
 
@@ -35,13 +35,13 @@ To set up and run the project locally:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/angular-product-explorer.git
+   git clone https://github.com/AhMEedMOStfa/pleny-task.git
    ```
 
 2. **Navigate to the project directory:**
 
    ```bash
-   cd angular-product-explorer
+   cd pleny-task
    ```
 
 3. **Install dependencies:**
