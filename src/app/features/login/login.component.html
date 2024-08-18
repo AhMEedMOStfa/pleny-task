@@ -1,0 +1,54 @@
+<div class="p-2 flex flex-col gap-2 items-center justify-center container">
+  <div class="flex flex-col items-center">
+    <img src="logo.png" alt="Logo" />
+  </div>
+  <h1 class="font-bold mb-2">Log in to your account</h1>
+  <p class="text-light-black">Welcome back! Please enter your details.</p>
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="submit()"
+    class="flex flex-col gap-4"
+  >
+    <div class="flex flex-col">
+      <label for="username" class="text-sm mb-2">Email</label>
+      <input
+        type="text"
+        id="username"
+        placeholder="Enter your email"
+        class="p-2 border-1 border-light-black rounded-md"
+        formControlName="username"
+      />
+      @if (loginForm.controls['username'].invalid &&
+      loginForm.controls['username'].dirty ||
+      loginForm.controls['username'].touched) {
+      @if(loginForm.controls['username'].errors?.['required']) {
+      <p class="red">Please Enter Your UserName</p>
+      } }
+    </div>
+    <div class="flex flex-col">
+      <label for="password" class="text-sm mb-2">Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+        class="p-2 border-1 border-light-black rounded-md"
+        formControlName="password"
+      />
+      @if (loginForm.controls['password'].invalid &&
+      loginForm.controls['password'].dirty ||
+      loginForm.controls['password'].touched) {
+      @if(loginForm.controls['password'].errors?.['required']) {
+      <p class="red">Please Enter Your Password</p>
+      } }
+    </div>
+    <button
+      type="submit"
+      class="py-3 bg-primary flex justify-center items-center gap-1 rounded-md border-none cursor-pointer font-bold"
+    >
+      <span> Sign in </span>
+      @if (loading()) {
+      <span class="loader-20"></span>
+      }
+    </button>
+  </form>
+</div>

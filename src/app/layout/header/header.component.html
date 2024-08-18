@@ -1,0 +1,37 @@
+<div class="border-bottom" appAnimate animationName="fadeIn">
+  <header class="my-2 mx-16 flex items-center justify-between bg-white">
+    <div class="flex items-center gap-6">
+      <div class="flex items-center">
+        <img src="logo.png" alt="Logo" class="mr-2" />
+        <span class="text-dark text-lg font-bold">ClickTik</span>
+      </div>
+      <a class="font-medium" routerLink="/home">Home</a>
+    </div>
+    <nav class="flex gap-2 items-center">
+      @if (loginService.authToken()) {
+      <div class="flex items-center gap-3">
+        <div class="relative flex items-center">
+          @if (searchLoading$ | async) {
+          <span class="loader-20 end absolute"></span>
+          }
+          <input
+            #searchField
+            class="rounded-md py-2 px-6 border-1"
+            type="text"
+            placeholder="Search"
+            (input)="onSearch(searchField.value)"
+          />
+          <img src="search.png" class="ps-1 absolute" alt="search" />
+        </div>
+      </div>
+      <div class="relative">
+        <img src="cart.png" alt="cart" />
+        <div class="dimension">{{ cartNumber$ | async }}</div>
+      </div>
+      }
+      <span class="text-gray">{{
+        loginService.authToken() ? "Account" : "Log In"
+      }}</span>
+    </nav>
+  </header>
+</div>

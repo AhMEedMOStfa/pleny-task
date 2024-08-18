@@ -1,0 +1,35 @@
+// _utility.scss
+
+@use 'variables' as *;
+
+.bg-primary {
+  background-color: $primary-color;
+}
+
+.bg-white {
+  background-color: $white;
+}
+.bg-dark-blue{
+  background: $dark-blue;
+}
+.text-white {
+  color: $white;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+.text-light-black{
+  color: $light-black;
+}
+.text-dark {
+  color: $dark;
+}
+
+.text-gray {
+  color: $gray;
+}
+.border-light-black{
+  border-color: $light-black;
+}
+

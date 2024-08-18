@@ -1,0 +1,60 @@
+<div class="card">
+  <div class="card-badge">
+    <span class="badge-text">-{{ product().discountPercentage }}%</span>
+  </div>
+  <div class="card-image">
+    @if (product()) {
+    <img
+      [src]="product().thumbnail"
+      appAnimate
+      animationName="fadeIn"
+      [alt]="product().title"
+    />
+    }@else {
+    <img
+      src="placeholder.png"
+      appAnimate
+      animationName="fadeIn"
+      alt=" placeholder"
+    />
+    }
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">{{ product().title }}</h3>
+    <p class="card-description line-clamp-2">{{ product().description }}</p>
+    <div class="card-pricing">
+      <span class="price-original">{{ product().price }}USD</span>
+      <span class="price-discounted"
+        >{{
+          product().price -
+            product().price * (product().discountPercentage / 100) | number
+        }}
+        USD</span
+      >
+    </div>
+    <div class="card-details">
+      <p>
+        Brand: <span class="brand-name">{{ product().brand }}</span>
+      </p>
+      <p>
+        Category: <span class="category">{{ product().category }}</span>
+      </p>
+      <p>
+        In stock: <span class="stock-count">{{ stock() }}</span>
+      </p>
+    </div>
+    <div class="card-footer">
+      <div class="rating">
+        <span class="star-rating">⭐ {{ product().rating }}</span>
+        <span class="rating-count">({{ product().reviews.length }})</span>
+      </div>
+      <button
+        (click)="addToCart()"
+        [disabled]="stock() === 0"
+        class="btn-add-to-cart"
+      >
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>

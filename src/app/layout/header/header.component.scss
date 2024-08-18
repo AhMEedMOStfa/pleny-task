@@ -1,0 +1,17 @@
+@use '../../../styles/utility/variables' as *;
+.dimension{
+    width: 15px;
+    height: 15px;
+    border-radius:50%;
+    background-color: $primary-color;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:-5px;
+    inset-inline-end: -5px;
+    font-size: 9px;
+}
+.end{
+    inset-inline-end: 2px;
+}

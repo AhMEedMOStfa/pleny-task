@@ -1,0 +1,131 @@
+// _utilities.scss
+@use 'mixins' as *;
+@use 'variables' as *;
+
+
+// Gap Utilities
+@include generate-spacing('gap', $gap-scale);
+
+// Border Radius Utilities
+@include generate-border-radius($border-radius-scale);
+
+// Width Utilities
+@include generate-size-width('w', $width-scale);
+
+// Height Utilities
+@include generate-size-height('h', $height-scale);
+
+@for $i from 1 through 5 {
+    .line-clamp-#{$i} {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $i;
+    }
+}
+@for $i from 0 through 16 {
+    .m-#{$i} {
+        margin: $i * $baseUnit;
+    }
+}
+@for $i from 0 through 16 {
+    .mx-#{$i} {
+        margin-left: $i * $baseUnit;
+        margin-right: $i * $baseUnit;
+    }
+}
+@for $i from 0 through 16 {
+    .my-#{$i} {
+        margin-top: $i * $baseUnit;
+        margin-bottom: $i * $baseUnit;
+    }
+}
+
+@for $i from 0 through 16 {
+    .ms-#{$i} {
+        margin-inline-start: $i * $baseUnit;
+    }
+}
+@for $i from 0 through 16 {
+    .me-#{$i} {
+        margin-inline-end: $i * $baseUnit;
+    }
+}
+@for $i from 0 through 16 {
+    .mt-#{$i} {
+        margin-top: $i * $baseUnit;
+    }
+}
+@for $i from 0 through 16 {
+    .mb-#{$i} {
+        margin-bottom: $i * $baseUnit;
+    }
+}
+
+// Generate padding classes
+@for $i from 0 through 16 {
+    .p-#{$i} {
+        padding: $i * $baseUnit;
+    }
+}
+@for $i from 0 through 16 {
+    .px-#{$i} {
+        padding-left: $i * $baseUnit;
+        padding-right: $i * $baseUnit;
+    }
+}
+@for $i from 0 through 16 {
+    .py-#{$i} {
+        padding-top: $i * $baseUnit;
+        padding-bottom: $i * $baseUnit;
+    }
+}
+
+@for $i from 0 through 16 {
+    .ps-#{$i} {
+        padding-inline-start: $i * $baseUnit;
+    }
+}
+@for $i from 0 through 16 {
+    .pe-#{$i} {
+        padding-inline-end: $i * $baseUnit;
+    }
+}
+@for $i from 0 through 16 {
+    .pt-#{$i} {
+        padding-top: $i * $baseUnit;
+    }
+}
+@for $i from 0 through 16 {
+    .pb-#{$i} {
+        padding-bottom: $i * $baseUnit;
+    }
+}
+.border-bottom {
+    border-bottom: 1px solid $dark;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.border-1 {
+    border: 1px solid $light-black;
+}
+.border-none{
+    border: none;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.font-bold{
+    font-weight: bold;
+}
+.font-medium{
+    font-weight: 600;
+}
+
+
+
+

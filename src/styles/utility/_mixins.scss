@@ -1,0 +1,39 @@
+// _mixins.scss
+@use 'variables' as *;
+@mixin generate-spacing($property, $scale) {
+  @each $key, $value in $scale {
+    .#{$property}-#{$key} {
+      #{$property}: #{$value};
+    }
+  }
+}
+
+  @mixin generate-border-radius($scale) {
+    @each $key, $value in $scale {
+      .rounded-#{$key} {
+        border-radius: #{$value};
+      }
+    }
+  }
+  
+  @mixin generate-size-width($property, $scale) {
+    @each $key, $value in $scale {
+      .#{$property}-#{$key} {
+        width: #{$value};
+      }
+    }
+  }
+  @mixin generate-size-height($property, $scale) {
+    @each $key, $value in $scale {
+      .#{$property}-#{$key} {
+        height: #{$value};
+      }
+    }
+  }
+  @mixin lineClamp($lines) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+  }
+  

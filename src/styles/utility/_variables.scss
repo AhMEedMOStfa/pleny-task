@@ -1,0 +1,44 @@
+$baseUnit: 4px;
+$spacing-scale: (
+  0: 0px,
+  1: 4px,
+  2: 8px,
+  3: 16px,
+  4: 24px,
+  5: 32px,
+  6: 48px,
+  7: 64px,
+  8: 80px,
+);
+
+$border-radius-scale: (
+  none: 0,
+  sm: 4px,
+  md: 8px,
+  lg: 16px,
+  xl: 24px,
+  full: 9999px,
+);
+
+$gap-scale: $spacing-scale;
+
+$width-scale: (
+  auto: auto,
+  full: 100%,
+  screen: 100vw,
+);
+
+$height-scale: (
+  auto: auto,
+  full: 100%,
+  screen: 100vh,
+);
+
+$primary-color: #41CCCC;
+$dark: #2d3748;  
+$white: #ffffff;  
+$light-gray: #e2e8f0; 
+$gray: #4a5568;  
+$border:#424242;
+$light-black : #667085;
+$dark-blue : #1D2939;

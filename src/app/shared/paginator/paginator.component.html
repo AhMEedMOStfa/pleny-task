@@ -1,0 +1,28 @@
+<div class="pagination-container">
+  <button
+    class="pagination-button"
+    [disabled]="currentPage === 1"
+    (click)="prevPage()"
+  >
+    &lt;
+  </button>
+  <div class="pagination-numbers">
+    @for(page of pages; track page){
+    <span [ngClass]="{ active: page === currentPage }" (click)="goToPage(page)">
+      {{ page }}
+    </span>
+    }@empty {
+    <p>there are no pagination</p>
+    } @if(currentPage < totalPages - 2){
+
+    <span>...</span>
+    }
+  </div>
+  <button
+    class="pagination-button"
+    [disabled]="currentPage === totalPages"
+    (click)="nextPage()"
+  >
+    &gt;
+  </button>
+</div>

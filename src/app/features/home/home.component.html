@@ -1,0 +1,23 @@
+<h3 class="">iPhone</h3>
+<p class="text-light-black">Home/Products/category</p>
+<section class="flex gap-3">
+  <app-category-sidebar class="w-25" />
+  <div class="grid grid-cols-3 gap-2 w-75">
+    @for (product of products$ | async; track product.id) {
+    <app-product-card
+      [product]="product"
+      (onAddToCart)="addToCart()"
+      appAnimate
+      animationName="fadeIn"
+      class="self-start"
+    />
+    } @empty{ @if(!(isLoading$| async)){ there is no products } } @if
+    (isLoading$ |async) {
+    <div class="flex items-center justify-center">
+      <span class="loader-80"></span>
+    </div>
+
+    }
+  </div>
+</section>
+<app-paginator [total]="totalPage()" (onPageChange)="onPageChange($event)" />

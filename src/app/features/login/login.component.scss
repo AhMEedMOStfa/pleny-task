@@ -1,0 +1,17 @@
+.container{
+    max-width: 30%;
+    height: 100%;
+    margin:auto;
+    h1{
+        font-size: 1.8rem;
+    }
+    form{
+        width: 100%;
+        .red{
+            color: red;
+            font-size: 12px;
+            font-weight: normal;
+        }
+    }
+
+}
